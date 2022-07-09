@@ -45,6 +45,20 @@ module.exports = {
         let index = fortune.findIndex(elem => elem.id === +req.params.id)
         fortune.splice(index,1)
         res.status(200).send(fortune)
+    },
+
+    updateFortune: (req, res) => {
+        let {string} = req.params.body
+        let index = fortune.findIndex(elem => +elem.id === +id)
+
+        if(string[index] === index){
+            fortune.splice(index,1)
+            let adjustFort = ""
+            fortune.push(adjustFort)
+            res.sendStatus(200).send(fortune)
+        } else{
+            res.sendStatus(400)
+        }
     }
 
 }
